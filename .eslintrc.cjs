@@ -21,7 +21,25 @@ module.exports = {
   },
 
   // Base config
-  extends: ["eslint:recommended"],
+  extends: ["plugin:prettier/recommended", "eslint:recommended"],
+
+  rules: {
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "#/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ]
+  },
 
   overrides: [
     // React

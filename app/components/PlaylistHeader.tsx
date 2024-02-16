@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react"
 import { Playlist } from "~/libs/spotifyApi"
 import { Button } from "./ui/button"
-import { useNavigate, useSearchParams } from "@remix-run/react";
+import { useNavigate } from "@remix-run/react";
 
 interface PlaylistHeaderProps {
   playlist: Playlist
